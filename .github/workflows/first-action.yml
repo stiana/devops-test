@@ -18,6 +18,28 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Create backup of boot folder
         run: |
+          function Write-Logfile {
+            param(
+             [Parameter(Position=0, ValueFromPipeline=$true)]
+             [String]$Message
+            )
+
+            $date = Get-Date -Format "o"
+            $Message = "${date}: ${Message}"
+	        Write-Host "${Message}"
+            "${Message}"| Out-File -FilePath "$logfile" -Append
+          }
+
+          function Copy-Files {
+            param(        
+              [String]$Source,
+              [String]$Destination
+            )
+
+            Copy-Item -Path "$Source" -Destination "$Destination" -Recurse -Force
+            Get-ChildItem -Path "$Source" -Recurse | ForEach-Object { Write-Logfile "Copied '$($_.FullName)' to '$($_.FullName.Replace("$($Source.Replace('*', ''))", "$Destination\"))'"}
+          }
+          
           Write-Logfile "Backup old boot folder,.."
           Copy-Files C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot\* C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot.backup
           Write-Logfile DONE!
