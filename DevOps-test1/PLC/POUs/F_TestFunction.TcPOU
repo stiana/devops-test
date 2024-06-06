@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="F_TestFunction" Id="{158a3031-a16d-498d-b826-60c88cea8b08}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_TestFunction : REAL
+VAR_INPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[F_TestFunction := 1337;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
