@@ -16,3 +16,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Create backup of boot folder
+        run: |
+          Write-Logfile "Backup old boot folder,.."
+          Copy-Files C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot\* C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot.backup
+          Write-Logfile DONE!
