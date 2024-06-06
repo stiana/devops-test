@@ -24,6 +24,9 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Create backup of boot folder
         run: |
+          $workingdirectory = Get-Location
+          $startTime = Get-Date -Format "yyyy-MM-ddThhmmss"
+          $logfile =  "$(Get-Location)\Update-${startTime}.log"
           function Write-Logfile {
             param(
              [Parameter(Position=0, ValueFromPipeline=$true)]
