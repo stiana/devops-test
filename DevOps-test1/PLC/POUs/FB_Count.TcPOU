@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Count" Id="{843bd016-1464-46f3-b6f9-76f43cb76bf9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Count
+VAR_INPUT
+	bCount : BOOL;
+END_VAR
+VAR_OUTPUT
+	nCounterValue : INT;
+END_VAR
+VAR
+	rtCount : R_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[rtCount(CLK := bCount);
+IF rtCount.Q THEN
+	nCounterValue := nCounterValue + 1;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
