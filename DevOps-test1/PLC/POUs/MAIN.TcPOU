@@ -7,7 +7,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[nCounter := nCounter + 1;]]></ST>
+      <ST><![CDATA[nCounter := nCounter + 2;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
