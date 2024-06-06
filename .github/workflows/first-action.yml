@@ -1,23 +1,29 @@
+---
 name: Stians first action
 run-name: ${{ github.actor }} testing a customized action
-on: [push]
+on:
+  - push
 jobs:
   Walla-Walla-Bing-Bang:
     runs-on: self-hosted
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo '🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }} faktisk '
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }}
+          event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by
+          GitHub!"
+      - run: echo '🔎 The name of your branch is ${{ github.ref }} and your repository
+          is ${{ github.repository }} faktisk '
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the
+          runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Create backup of boot folder
-        run: |
+        run: >
           function Write-Logfile {
             param(
              [Parameter(Position=0, ValueFromPipeline=$true)]
@@ -26,9 +32,10 @@ jobs:
 
             $date = Get-Date -Format "o"
             $Message = "${date}: ${Message}"
-	        Write-Host "${Message}"
+            Write-Host "${Message}"
             "${Message}"| Out-File -FilePath "$logfile" -Append
           }
+
 
           function Copy-Files {
             param(        
@@ -39,7 +46,10 @@ jobs:
             Copy-Item -Path "$Source" -Destination "$Destination" -Recurse -Force
             Get-ChildItem -Path "$Source" -Recurse | ForEach-Object { Write-Logfile "Copied '$($_.FullName)' to '$($_.FullName.Replace("$($Source.Replace('*', ''))", "$Destination\"))'"}
           }
-          
+
+
           Write-Logfile "Backup old boot folder,.."
+
           Copy-Files C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot\* C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot.backup
+
           Write-Logfile DONE!
