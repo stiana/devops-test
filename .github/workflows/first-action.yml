@@ -23,7 +23,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Create backup of boot folder
-        run: >
+        run: |
           function Write-Logfile {
             param(
              [Parameter(Position=0, ValueFromPipeline=$true)]
