@@ -54,7 +54,7 @@ jobs:
           Write-Logfile "Backup old boot folder..."
 
           $srcfolder = 'C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot\*'
-          $dstfolder = 'C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot.backup'
+          $dstfolder = 'C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot_backup'
           Copy-Files $srcfolder $dstfolder
 
           Write-Logfile DONE!
