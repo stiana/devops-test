@@ -53,7 +53,7 @@ jobs:
           $srcfolder = 'C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot'
           $dstfolder = 'C:\Program Files (x86)\Beckhoff\TwinCAT\3.1\Boot_backup'
 
-          Write-Logfile "Rename Boot to backup folder!"
+          Write-Logfile "Rename Boot to backup folder!!"
 
           Rename-Item -Path $srcfolder -NewName $dstfolder
           Write-Logfile DONE!
