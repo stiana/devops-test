@@ -17,4 +17,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Building TC3 4024 Project
+        run: ./scripts/build.ps1
       - run: echo "🍏 This job's status is ${{ job.status }}."
