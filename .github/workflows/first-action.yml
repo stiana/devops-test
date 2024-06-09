@@ -4,8 +4,8 @@ run-name: ${{ github.actor }} testing a customized action
 on:
   - push
 jobs:
-  Walla-Walla-Bing-Bang:
-    runs-on: self-hosted
+  Build-for-tc4-4024:
+    runs-on: [self-hosted, tc3-4024]
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }}
           event."
