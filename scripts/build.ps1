@@ -1,7 +1,7 @@
 $workingdirectory = Get-Location
-$projectPath = "$workingdirectory\"
+$projectPath = "$workingdirectory"
 $solutionName = "DevOps-test1.sln"
-$solutionPath = $projectPath + $solutionName
+$solutionPath = "$projectPath\$solutionName"
 $bootPath = "$projectPath\DevOps-test1\_Boot"
 
 . "$workingdirectory\scripts\BuildFunctions.ps1"
