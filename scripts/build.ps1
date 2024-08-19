@@ -4,8 +4,8 @@ $solutionName = "DevOps-test1.sln"
 $solutionPath = $projectPath + $solutionName
 $bootPath = "$projectPath\DevOps-test1\_Boot"
 
-. "$workingdirectory\BuildFunctions.ps1"
-. "$workingdirectory\MessageFilter.ps1"
+. "$workingdirectory\scripts\BuildFunctions.ps1"
+. "$workingdirectory\scripts\MessageFilter.ps1"
 
 
 
