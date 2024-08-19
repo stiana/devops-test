@@ -7,6 +7,7 @@ VAR
 	bCount		: BOOL;
 	nCounter	: INT;
 	nCounter2	: INT;
+	nCounter3	: INT;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbCount(
