@@ -24,12 +24,12 @@ END_VAR]]></Declaration>
 
 nCounter := nCounter +1;
 
-
-bLed1 := nCounter.0;
-bLed2 := nCounter.1;
-bLed3 := nCounter.2;
-bLed4 := nCounter.3;
-]]></ST>
+IF nCounter MOD 10 = 0 THEN
+	bLed1 := nCounter.0;
+	bLed2 := nCounter.1;
+	bLed3 := nCounter.2;
+	bLed4 := nCounter.3;
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
