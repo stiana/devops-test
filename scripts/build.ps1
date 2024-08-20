@@ -41,8 +41,8 @@ log "testing variant output -> start"
 log $systemManager.ProjectVariantConfig 
 log "testing variant output -> end"
 
-log "Set variant"
-$systemManager.CurrentProjectVariant = "Variant3";
+# log "Set variant"
+# $systemManager.CurrentProjectVariant = "Variant3";
 
 log "Set target netid ... "
 $systemManager.SetTargetNetId("5.90.1.214.1.1")
