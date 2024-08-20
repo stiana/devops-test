@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.56" TcProjectVariant="variant4" TcVersionFixed="true">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.56" TcProjectVariant="variant1" TcVersionFixed="true">
 	<Project ProjectGUID="{AD0CDE54-8771-4167-8244-D6C52706A5A5}" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x6">
 		<System>
 			<Tasks>
@@ -27,7 +27,7 @@
 				<Member>variant2</Member>
 				<Member>variant3</Member>
 			</Group>
-			<Variant>
+			<Variant Save="true">
 				<Name>variant1</Name>
 			</Variant>
 			<Variant>
@@ -36,7 +36,7 @@
 			<Variant>
 				<Name>variant3</Name>
 			</Variant>
-			<Variant Save="true">
+			<Variant>
 				<Name>variant4</Name>
 			</Variant>
 		</Variants>
