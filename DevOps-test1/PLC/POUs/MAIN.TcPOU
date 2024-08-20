@@ -8,13 +8,28 @@ VAR
 	nCounter	: INT;
 	nCounter2	: INT;
 	nCounter3	: INT;
+	
+	bLed1	AT %Q*	: BOOL;
+	bLed2	AT %Q*	: BOOL;
+	bLed3	AT %Q*	: BOOL;
+	bLed4	AT %Q*	: BOOL;
+	
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbCount(
 	bCount			:= bCount,
-	nCountIncrement	:= 2,
-	nCounterValue	=> nCounter
-);]]></ST>
+	nCountIncrement	:= 2
+//	nCounterValue	=> nCounter
+);
+
+nCounter := nCounter +1;
+
+
+bLed1 := nCounter.0;
+bLed2 := nCounter.1;
+bLed3 := nCounter.2;
+bLed4 := nCounter.3;
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

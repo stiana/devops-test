@@ -3,55 +3,28 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6633d97d-5782-47a6-9928-4ad5bcf099a0}</ProjectGuid>
+    <ProjectGuid>{705ec899-0657-4e58-ac76-859767f83dad}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>PLC</Name>
+    <Name>Untitled1</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
-    <Application>{4ad7e1df-bfc3-4d48-9b8e-2e2243e7681b}</Application>
-    <TypeSystem>{36d05ca3-0890-422f-a754-d906bf8c96bd}</TypeSystem>
-    <Implicit_Task_Info>{6278c7d7-037e-4355-add8-24f1a2a98d57}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{8b8aa34a-9ae5-4a19-8ba5-2d1961cbe8c2}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{b221794a-fb80-4e47-88e0-9cad7be04b97}</Implicit_Jitter_Distribution>
-    <LibraryReferences>{f303a74b-d5e4-487d-9e05-26ba52b1092d}</LibraryReferences>
+    <Application>{586b43dc-0fbd-4e69-804d-9a0bbe735a5f}</Application>
+    <TypeSystem>{43b1233f-5933-4e40-8a4d-1b8e355d0802}</TypeSystem>
+    <Implicit_Task_Info>{ea116ede-36e8-4968-947a-aa8fac76198b}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{423e4ea7-3903-4b1d-b4e0-931aee53b4b7}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{2409d926-05d0-4bbb-b3c4-bee363693071}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{3d03fb80-43c1-4310-9857-bf4956e5e0b2}</LibraryReferences>
+    <Company>blabla</Company>
+    <Released>false</Released>
+    <Title>test1</Title>
+    <ProjectVersion>0.0.1</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PlcTask.TcTTO">
+    <Compile Include="MyLibFunction.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Count.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DUTs" />
-    <Folder Include="GVLs" />
-    <Folder Include="VISUs" />
-    <Folder Include="POUs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PlaceholderReference Include="Tc2_Standard">
-      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
-      <Namespace>Tc2_Standard</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="Tc2_System">
-      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
-      <Namespace>Tc2_System</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="Tc3_Module">
-      <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
-      <Namespace>Tc3_Module</Namespace>
-    </PlaceholderReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PLC.tmc">
-      <SubType>Content</SubType>
-    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

@@ -37,16 +37,28 @@ $sln.Open($solutionPath)
 $project = $sln.Projects.Item(1)
 $systemManager = $project.Object
 
+log "Set target netid ... "
+$systemManager.SetTargetNetId("5.90.1.214.1.1")
+
 $targetNetId = $systemManager.GetTargetNetId()
 log "Target netid: $targetNetId"
 
-log "Clean solution,... "
+
+log "Clean solution.... "
 $sln.solutionBuild.Clean($true)
 
-Build-Project $sln "$workingdirectory\DevOps-test1\DevOps-test1.tsproj" "Release|TwinCAT RT (x64)"
+#Build-Project $sln "$workingdirectory\DevOps-test1\DevOps-test1.tsproj" "Release|TwinCAT RT (x64)"
+Build-Project $sln "$workingdirectory\DevOps-test1\DevOps-test1.tsproj" "Release|TwinCAT CE7 (ARMV7)"
 #Build-Project $sln "$workingdirectory\sDevOps-test1\PLC\PLC.plcproj" "Release|TwinCAT RT (x64)"
 
 
+log "Activate configuration... "
+$systemManager.ActivateConfiguration()
+
+
+log "Restart TwinCAT.... "
+$systemManager.StartRestartTwinCAT() 
+ 
 
 $dte.Quit()
 
