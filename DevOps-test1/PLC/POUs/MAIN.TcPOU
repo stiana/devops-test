@@ -24,7 +24,7 @@ END_VAR]]></Declaration>
 
 nCounter := nCounter +1;
 
-IF nCounter MOD 10 = 0 THEN
+IF nCounter MOD 20 = 0 THEN
 	bLed1 := nCounter.0;
 	bLed2 := nCounter.1;
 	bLed3 := nCounter.2;
