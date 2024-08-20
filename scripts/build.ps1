@@ -32,8 +32,9 @@ $dte.MainWindow.Visible = $true
 
 log "Open solution,... "
 $sln = $dte.Solution
-$project = $sln.Open($solutionPath)
+$sln.Open($solutionPath)
 
+$project = $sln.Projects.Item(1)
 $systemManager = $project.Object
 
 $targetNetId = $systemManager.GetTargetNetId()
