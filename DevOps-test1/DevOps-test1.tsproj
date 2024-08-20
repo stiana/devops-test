@@ -36,6 +36,9 @@
 			<Variant>
 				<Name>variant3</Name>
 			</Variant>
+			<Variant>
+				<Name>variant4</Name>
+			</Variant>
 		</Variants>
 	</Project>
 	<Mappings>

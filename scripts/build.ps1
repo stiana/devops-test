@@ -37,6 +37,11 @@ $sln.Open($solutionPath)
 $project = $sln.Projects.Item(1)
 $systemManager = $project.Object
 
+log "testing variant output -> start"
+log $systemManager.ProjectVariantConfig 
+log "testing variant output -> end"
+
+log "Set variant"
 $systemManager.CurrentProjectVariant = "Variant3";
 
 log "Set target netid ... "
