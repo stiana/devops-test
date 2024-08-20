@@ -32,13 +32,20 @@ $dte.MainWindow.Visible = $true
 
 log "Open solution,... "
 $sln = $dte.Solution
-$sln.Open($solutionPath)
+$project = $sln.Open($solutionPath)
+
+$systemManager = $project.Object
+
+$targetNetId = $systemManager.GetTargetNetId()
+log "Target netid: $targetNetId"
 
 log "Clean solution,... "
 $sln.solutionBuild.Clean($true)
 
 Build-Project $sln "$workingdirectory\DevOps-test1\DevOps-test1.tsproj" "Release|TwinCAT RT (x64)"
 #Build-Project $sln "$workingdirectory\sDevOps-test1\PLC\PLC.plcproj" "Release|TwinCAT RT (x64)"
+
+
 
 $dte.Quit()
 
