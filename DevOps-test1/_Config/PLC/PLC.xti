@@ -1,6 +1,15 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.56" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.56" ClassName="CNestedPlcProjDef" TcProjectVariant="variant2">
 	<Project GUID="{6633D97D-5782-47A6-9928-4AD5BCF099A0}" Name="PLC" PrjFilePath="..\..\PLC\PLC.plcproj" TmcFilePath="..\..\PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<ProjectVariant PvUseDisable="true" PvUseDefine="true">
+			<Variant>
+				<Name>variant1</Name>
+				<Name>variant2</Name>
+				<Name>variant3</Name>
+				<Disable>0</Disable>
+				<Defines></Defines>
+			</Variant>
+		</ProjectVariant>
 		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{9142D5C1-E943-CCA8-A112-595DFE69756D}">
 			<Name>PLC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
