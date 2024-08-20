@@ -30,7 +30,7 @@
 			<EtherCAT PortABoxInfo="#x01000004"/>
 		</Box>
 		<Box File="Term 6 (EL9011).xti" Id="6">
-			<EtherCAT PortABoxInfo="#x01000005"/>
+			<EtherCAT PortABoxInfo="#x01000004"/>
 		</Box>
 	</Box>
 </TcSmItem>

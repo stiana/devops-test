@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.56" ClassName="CFlbTermDef" SubType="9099">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.56" ClassName="CFlbTermDef" SubType="9099" TcProjectVariant="Variant1">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
@@ -17,6 +17,16 @@
 	<Box Id="5" BoxType="9099" BoxFlags="#x00000020">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
+		<ProjectVariant PvUseDisable="true">
+			<Variant>
+				<Name>Variant1</Name>
+				<Name>variant2</Name>
+				<Name>variant3</Name>
+				<Name>variant4</Name>
+				<Disable>0</Disable>
+				<PortABoxInfo>#x01000004</PortABoxInfo>
+			</Variant>
+		</ProjectVariant>
 		<EtherCAT SlaveType="2" PdiType="#x0005" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="3" FoeType="1" VendorId="#x00000002" ProductCode="#x0c813052" RevisionNo="#x00160000" InfoDataAddr="true" TimeoutMailbox2="2000" CheckRevisionNoType="3" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL3201 1Ch. Ana. Input PT100 (RTD)" Desc="EL3201">
 			<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
 			<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
