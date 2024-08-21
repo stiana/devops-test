@@ -48,8 +48,8 @@ log "current variant:"
 $systemManager | Get-Member -Name CurrentProjectVariant
 
 log "Set variant"
-$systemManager.CurrentProjectVariant = "Variant3"
-
+//$systemManager.CurrentProjectVariant = "Variant3"
+Set-Variable $systemManager.CurrentProjectVariant "Variant3"
 
 
 log "Set target netid ... "
