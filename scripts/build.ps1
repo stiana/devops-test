@@ -45,7 +45,7 @@ log "current variant:"
 log $systemManager.CurrentProjectVariant
 
 log "Set variant"
-$systemManager.CurrentProjectVariant = "Variant1"
+$systemManager.CurrentProjectVariant = "Variant4"
 #
 
 log "current variant:"
