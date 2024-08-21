@@ -8,7 +8,6 @@ $bootPath = "$projectPath\DevOps-test1\_Boot"
 . "$workingdirectory\scripts\MessageFilter.ps1"
 
 
-
 # register MessageFiler to handle COM object messages
 AddMessageFilterClass
 [EnvDTEUtils.MessageFilter]::Register() 
@@ -27,7 +26,7 @@ if (Test-Path -Path $bootPath) {
 
 log "Start TcXaeShell,... "
 # $dte = new-object -com TcXaeShell.DTE.15.0
-$dte = new-object -com TcXaeShell.DTE.16.0
+$dte = new-object -com VisualStudio.DTE.16.0
 
 $dte.SuppressUI = $false
 $dte.MainWindow.Visible = $true
