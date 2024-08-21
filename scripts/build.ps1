@@ -41,6 +41,9 @@ log "testing variant output -> start"
 log $systemManager.ProjectVariantConfig 
 log "testing variant output -> end"
 
+log "current variant:"
+log $systemManager.CurrentProjectVariant
+
 log "Set variant"
 $systemManager.CurrentProjectVariant = "Variant3"
 
