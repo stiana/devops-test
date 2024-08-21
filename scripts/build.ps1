@@ -44,8 +44,13 @@ log "testing variant output -> end"
 log "current variant:"
 log $systemManager.CurrentProjectVariant
 
+log "current variant:"
+$systemManager | log Get-Member -Name CurrentProjectVariant
+
 log "Set variant"
 $systemManager.CurrentProjectVariant = "Variant3"
+
+
 
 log "Set target netid ... "
 $systemManager.SetTargetNetId("5.90.1.214.1.1")
