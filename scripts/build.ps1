@@ -46,7 +46,7 @@ log $systemManager.CurrentProjectVariant
 
 log "Set variant"
 #$systemManager.CurrentProjectVariant = "Variant3"
-Set-Variable $systemManager.CurrentProjectVariant "Variant3"
+Set-Variable -Name $systemManager.CurrentProjectVariant -Value "Variant3"
 
 log "current variant:"
 log $systemManager.CurrentProjectVariant
