@@ -26,7 +26,9 @@ if (Test-Path -Path $bootPath) {
 }
 
 log "Start TcXaeShell,... "
-$dte = new-object -com TcXaeShell.DTE.15.0
+# $dte = new-object -com TcXaeShell.DTE.15.0
+$dte = new-object -com TcXaeShell.DTE.16.0
+
 $dte.SuppressUI = $false
 $dte.MainWindow.Visible = $true
 
