@@ -34,8 +34,6 @@ IF nCounter MOD 20 = 0 THEN
 	bLed2 := nCounter.3;
 {END_IF}
 
-
-
 END_IF
 ]]></ST>
     </Implementation>
