@@ -23,7 +23,7 @@ AddMessageFilterClass
 if (Test-Path -Path $bootPath) {
 	Remove-Item $bootPath -Recurse
 }
-
+#
 log "Start TcXaeShell,... "
 $dte = new-object -com TcXaeShell.DTE.15.0
 
