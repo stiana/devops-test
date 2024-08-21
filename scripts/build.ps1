@@ -44,12 +44,12 @@ log "testing variant output -> end"
 log "current variant:"
 log $systemManager.CurrentProjectVariant
 
-log "current variant:"
-$systemManager | Get-Member -Name CurrentProjectVariant
-
 log "Set variant"
 #$systemManager.CurrentProjectVariant = "Variant3"
 Set-Variable $systemManager.CurrentProjectVariant "Variant3"
+
+log "current variant:"
+log $systemManager.CurrentProjectVariant
 
 
 log "Set target netid ... "
