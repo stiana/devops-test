@@ -1,74 +1,65 @@
-$workingdirectory = Get-Location
-$projectPath = "$workingdirectory"
-$solutionName = "DevOps-test1.sln"
+# Parameters
+$solutionName = "DevOps-test1"
+$platform = "Release|TwinCAT CE7 (ARMV7)" # Release|TwinCAT RT (x64)
+$setVariant = "variant3"
+$targetNetId = "5.90.1.214.1.1"
+$supressUI = $false
+$mainWindowVisible = $true
+
+# Prepare paths
+$projectPath = Get-Location
 $solutionPath = "$projectPath\$solutionName"
-$bootPath = "$projectPath\DevOps-test1\_Boot"
+$solutionProjectFilePath = "$projectPath\$solutionName.sln"
+$bootPath = "$projectPath\$solutionName\_Boot"
 
-. "$workingdirectory\scripts\BuildFunctions.ps1"
-. "$workingdirectory\scripts\MessageFilter.ps1"
-
+# Call helper scripts
+. "$projectPath\scripts\BuildFunctions.ps1"
+. "$projectPath\scripts\MessageFilter.ps1"
 
 # register MessageFiler to handle COM object messages
 AddMessageFilterClass
 [EnvDTEUtils.MessageFilter]::Register() 
 
-# Print working directories
- Log $workingdirectory
- Log $projectPath
- Log $solutionName
- Log $solutionPath
- Log $bootPath
-
 # Ensure previously boot folder is removed before new build
 if (Test-Path -Path $bootPath) {
 	Remove-Item $bootPath -Recurse
 }
-#
+
 log "Start TcXaeShell,... "
 $dte = new-object -com TcXaeShell.DTE.15.0
 
-$dte.SuppressUI = $false
-$dte.MainWindow.Visible = $true
+$dte.SuppressUI = $supressUI
+$dte.MainWindow.Visible = $mainWindowVisible
 
-log "Open solution,... "
+log "Open solution... "
 $sln = $dte.Solution
-$sln.Open($solutionPath)
+$sln.Open($solutionProjectFilePath)
 
+# Get TwinCAT project from solution
 $project = $sln.Projects.Item(1)
 $systemManager = $project.Object
 
-log "testing variant output -> start"
-log $systemManager.ProjectVariantConfig 
-log "testing variant output -> end"
+log "Set variant to: $setVariant"
+$systemManager.CurrentProjectVariant = $setVariant
 
-log "current variant:"
-log $systemManager.CurrentProjectVariant
+$currentVariant = $systemManager.CurrentProjectVariant
+log "Variant is set to: $currentVariant"
 
-log "Set variant"
-$systemManager.CurrentProjectVariant = "variant3"
-#
-
-log "current variant:"
-log $systemManager.CurrentProjectVariant
-
-
-log "Set target netid ... "
-$systemManager.SetTargetNetId("5.90.1.214.1.1")
+log "Set target netid... "
+$systemManager.SetTargetNetId($targetNetId)
 
 $targetNetId = $systemManager.GetTargetNetId()
-log "Target netid: $targetNetId"
+log "Target netid set to: $targetNetId"
 
-
-log "Clean solution.... "
+log "Clean solution... "
 $sln.solutionBuild.Clean($true)
 
-#Build-Project $sln "$workingdirectory\DevOps-test1\DevOps-test1.tsproj" "Release|TwinCAT RT (x64)"
-Build-Project $sln "$workingdirectory\DevOps-test1\DevOps-test1.tsproj" "Release|TwinCAT CE7 (ARMV7)"
+Build-Project $sln "$solutionPath\$solutionName.tsproj" $platform
 
 log "Activate configuration... "
 $systemManager.ActivateConfiguration()
 
-log "Restart TwinCAT.... "
+log "Restart TwinCAT... "
 $systemManager.StartRestartTwinCAT() 
  
 
