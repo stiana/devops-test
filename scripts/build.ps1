@@ -3,8 +3,8 @@ $solutionName = "DevOps-test1"
 $platform = "Release|TwinCAT CE7 (ARMV7)" # Release|TwinCAT RT (x64)
 $setVariant = "Variant1"
 $targetNetId = "5.90.1.214.1.1"
-$supressUI = $false
-$mainWindowVisible = $true
+$supressUI = $true
+$mainWindowVisible = $false
 
 # Prepare paths
 $projectPath = Get-Location
