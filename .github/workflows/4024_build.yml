@@ -5,7 +5,7 @@ on:
   - push
 jobs:
   Build-for-tc4-4024:
-    runs-on: [self-hosted, tc3-4026]
+    runs-on: [self-hosted, tc3-4024]
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
